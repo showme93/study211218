@@ -1,0 +1,46 @@
+body {
+  background-color: black;
+}
+
+#hd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+#hd a {
+  color: white;
+}
+
+#hd #allMenu button {
+  width: 30px;
+  background-color: transparent;
+}
+
+#hd #allMenu button span, #hd #allMenu button:after, #hd #allMenu button:before {
+  display: block;
+  height: 2px;
+  background-color: white;
+}
+
+#hd #allMenu button span {
+  margin: 8px 0;
+}
+
+#hd #allMenu button:after, #hd #allMenu button:before {
+  content: "";
+}
+
+#hd h1 a {
+  display: block;
+  max-width: 180px;
+  min-width: 120px;
+  width: 22vw;
+}
+
+#hd h1 a img {
+  display: block;
+  width: 100%;
+}
+/*# sourceMappingURL=hd.css.map */
