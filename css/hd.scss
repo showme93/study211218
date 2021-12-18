@@ -3,15 +3,19 @@ body{
 }
 #hd{
     display: flex;
-    border-bottom: 1px solid #f1f1f1;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;    
+    & > *{
+        margin: 0 2vw; //화면에 비율 2%를 좌우여백으로 주어라.
+    }
     a{
         color:white;
     }
     #allMenu{
         button{
+            display: block;
             width:30px;
             background-color: transparent;
-
             span,
             &:after,
             &:before{
@@ -40,6 +44,65 @@ body{
                 display: block;
                 width:100%;
             }
+        }
+    }
+}
+
+#gnb{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    li{
+        position: relative;           
+        a.depth1{
+            font-size: 1.6em;
+            display: block;
+            padding:2em;
+            z-index: 10000;
+            position: relative;
+            background-color:black;
+        }
+        &:hover .depth2{
+            transform: translateY(0);
+        }     
+        .depth2{
+            position: absolute;
+            background: white;
+            width:100%;
+            border:1px solid #ccc;
+            padding: 2em;
+            left:0;
+            top:100%;
+            border-top:0;
+            transform: translateY(-100%); //자신의 높이만큼 위로 올라가라
+            transition: 0.5s;
+            ul{
+                li{
+                    a{
+                        color:#222;
+
+                    }
+                }
+            }
+        }
+    }
+}
+//상단 오른쪽 검색버튼과 검색레이어
+#seachWrap{
+    .search_icon{      
+        display: block; 
+        width:35px;
+        height:35px;
+        background: url(../img/i_search_white.svg) transparent no-repeat;
+    }
+    .searchWbox{
+        display: none;
+        input{
+
+        }
+        .b_search_icon{
+
         }
     }
 }

@@ -6,7 +6,14 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom: 1px solid #f1f1f1;
+}
+
+#hd > * {
+  margin: 0 2vw;
 }
 
 #hd a {
@@ -14,6 +21,7 @@ body {
 }
 
 #hd #allMenu button {
+  display: block;
   width: 30px;
   background-color: transparent;
 }
@@ -42,5 +50,68 @@ body {
 #hd h1 a img {
   display: block;
   width: 100%;
+}
+
+#gnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#gnb li {
+  position: relative;
+}
+
+#gnb li a.depth1 {
+  font-size: 1.6em;
+  display: block;
+  padding: 2em;
+  z-index: 10000;
+  position: relative;
+  background-color: black;
+}
+
+#gnb li:hover .depth2 {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+#gnb li .depth2 {
+  position: absolute;
+  background: white;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 2em;
+  left: 0;
+  top: 100%;
+  border-top: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#gnb li .depth2 ul li a {
+  color: #222;
+}
+
+#seachWrap .search_icon {
+  display: block;
+  width: 35px;
+  height: 35px;
+  background: url(../img/i_search_white.svg) transparent no-repeat;
+}
+
+#seachWrap .searchWbox {
+  display: none;
 }
 /*# sourceMappingURL=hd.css.map */
