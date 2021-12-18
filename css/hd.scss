@@ -1,10 +1,115 @@
 body{
-    background-color: black;
+    background-color: #000000;
+    min-height:200vh;
 }
+.ofhy{ overflow-y: hidden !important;}
+
+#allMenu.show{
+    button{                      
+        span{  
+            width:0;                          
+        }
+        &:after{
+        transform:rotate(-45deg) translateY(-13.5px);
+        }
+        &:before{  
+            transform: rotate(45deg) translateY(13.5px);                          
+        }
+    }
+}
+
+
+.scroll  #hd{
+    background: rgba(255, 255, 255, 1);
+    justify-content: space-between;
+    padding:1em 0;
+    & > *{       
+    }
+    a{        
+    }
+    
+    #allMenu{
+        button{           
+            span,
+            &:after,
+            &:before{               
+                background-color: black;
+            }           
+            span{                            
+            }
+            &:after,
+            &:before{                            
+            }
+        }
+    }
+    h1{
+        a {           
+            img{               
+            }
+        }
+    }    
+}
+.scroll #gnb{ display: none;}
+
+#mgnb.wide{ 
+    transform: translateX(0) !important;
+}
+#mgnb{
+    position: fixed;     top:0; bottom:0;     left:0; right:0;
+    transform: translateX(-100%);        background-color: white;     transition: 0.5s;
+    ul{
+        display: flex;
+        justify-content: center;
+        align-content: center;                
+        li{
+            a.depth1{
+                background-color:white;
+                color:black;
+            }
+            .depth2{
+                position: relative;
+                transform: translateY(0);
+                opacity: 1;
+                border:0; 
+                ul{
+                    display: block;
+                    a{
+                        color:black
+                    } 
+                }          
+            }
+        }  
+    }  
+}
+.scroll  #seachWrap{
+    .search_icon{       
+        background: url(../img/i_search_black.svg) transparent no-repeat;
+    }
+    .searchWbox{
+       
+        .searchinbox{            
+           
+            .close{
+               
+            }
+            input{
+               
+            }
+            .b_search_icon{
+               
+            }
+        }        
+    }
+}
+
+
 #hd{
+    position: fixed;
+    left:0; top:0; right:0;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #f1f1f1;    
+    border-bottom: 1px solid #f1f1f1; 
+    transition: 0.5s;   
     & > *{
         margin: 0 2vw; //화면에 비율 2%를 좌우여백으로 주어라.
     }
@@ -65,6 +170,7 @@ body{
         }
         &:hover .depth2{
             transform: translateY(0);
+            opacity: 1;
         }     
         .depth2{
             position: absolute;
@@ -77,6 +183,7 @@ body{
             border-top:0;
             transform: translateY(-100%); //자신의 높이만큼 위로 올라가라
             transition: 0.5s;
+            opacity: 0;
             ul{
                 li{
                     a{
@@ -97,13 +204,40 @@ body{
         background: url(../img/i_search_white.svg) transparent no-repeat;
     }
     .searchWbox{
+        position: fixed;
+        background-color: #ffffff;
+        left:15px; right:15px; top:15px; bottom:15px;
+        z-index: 10000;
         display: none;
-        input{
-
-        }
-        .b_search_icon{
-
-        }
+        justify-content: center;
+        align-items: center;        
+        .searchinbox{            
+            padding : 15px;
+            display: flex;
+            align-items: baseline;
+            position: relative;
+            .close{
+                position: absolute;
+                top:-35px; right:0;
+                width:35px; height:35px;
+                background:url(../img/btn_close.svg) no-repeat center;
+                font-size: 0; line-height: 0;
+            }
+            input{
+                min-width:calc(320px - 3vw);
+                max-width:600px;
+                border-bottom:1px solid #222;
+                line-height: 2;
+                font-size: 1.5rem;
+            }
+            .b_search_icon{
+                font-size: 0;
+                line-height: 0;
+                width: 35px;
+                height: 35px;
+                background: url(../img/i_search_black.svg) transparent no-repeat;
+            }
+        }        
     }
 }
           
